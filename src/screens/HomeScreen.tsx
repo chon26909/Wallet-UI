@@ -4,6 +4,8 @@ import styled from "styled-components/native";
 import { colors } from "../components/colors";
 import CardSection from "../components/Cards/CardSection";
 import mastercard from "../../assets/images/MasterCard.png";
+import { StatusBar } from "expo-status-bar";
+import TransectionSection from "../components/Transections/TransectionSection";
 
 const HomeContainer = styled(Container)`
     background-color: ${colors.graylight};
@@ -29,9 +31,25 @@ const HomeScreen: FunctionComponent = () => {
         }
     ];
 
+    const transactionData = [
+        {
+            id: 1,
+            amount: "1000",
+            date: "10 Dec 2022",
+            title: "Taxi",
+            subtitle: "Grab Car",
+            art: {
+                background: colors.primary,
+                icon: "car"
+            }
+        }
+    ];
+
     return (
         <HomeContainer>
+            <StatusBar style='dark' />
             <CardSection data={data} />
+            <TransectionSection data={transactionData} />
         </HomeContainer>
     );
 };

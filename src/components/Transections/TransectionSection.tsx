@@ -19,11 +19,11 @@ const TransectionRow = styled.View`
     width: 100%;
 `;
 
-const TransectionList = styled.View`
+const TransectionList = styled.FlatList`
     width: 100%;
 `;
 
-const TransectionSection: FunctionComponent<TransectionSectionProps> = () => {
+const TransectionSection: FunctionComponent<TransectionSectionProps> = (props) => {
     return (
         <TransectionSectionBackground>
             <TransectionRow style={{ marginBottom: 25 }}>
@@ -35,6 +35,15 @@ const TransectionSection: FunctionComponent<TransectionSectionProps> = () => {
                     <Ionicons />
                 </SmallText>
             </TransectionRow>
+            <TransectionList
+                data={props.data}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{
+                    paddingBottom: 25
+                }}
+                keyExtractor={({ id }: any) => id.toString()}
+                renderItem={}
+            />
         </TransectionSectionBackground>
     );
 };
