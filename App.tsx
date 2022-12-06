@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import AppLoading from "expo-app-loading";
+import { useFonts } from "expo-font";
+import RootStack from "./src/navigators/RootStack";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    let [fontsLoaded] = useFonts({
+        "Kanit-Bold": require("./assets/fonts/Kanit-Bold.ttf"),
+        "Kanit-Regular": require("./assets/fonts/Kanit-Regular.ttf"),
+        "Kanit-Light": require("./assets/fonts/Kanit-Light.ttf")
+    });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    if (!fontsLoaded) return <AppLoading />;
+
+    return <RootStack />;
+}
