@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components/native";
+import { TransactionProps } from "./types";
 
 const TransectionRow = styled.View`
     flex-direction: row;
@@ -17,8 +18,17 @@ const LeftView = styled.View`
     flex: 2;
 `;
 
-const TransactionItem: FunctionComponent = () => {
-    return <></>;
+const RightView = styled.View`
+    flex: 1;
+`;
+
+const TransactionItem: FunctionComponent<TransactionProps> = () => {
+    return (
+        <TransectionRow>
+            <LeftView></LeftView>
+            <RightView></RightView>
+        </TransectionRow>
+    );
 };
 
 export default TransactionItem;

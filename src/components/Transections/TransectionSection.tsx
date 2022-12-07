@@ -4,7 +4,7 @@ import { colors } from "../colors";
 import RegularText from "../Texts/RegularText";
 import SmallText from "../Texts/SmallText";
 import { Ionicons } from "@expo/vector-icons";
-import { TransectionSectionProps } from "./types";
+import { TransactionSectionProps } from "./types";
 
 const TransectionSectionBackground = styled.View`
     width: 100%;
@@ -23,7 +23,7 @@ const TransectionList = styled.FlatList`
     width: 100%;
 `;
 
-const TransectionSection: FunctionComponent<TransectionSectionProps> = (props) => {
+const TransectionSection: FunctionComponent<TransactionSectionProps> = (props) => {
     return (
         <TransectionSectionBackground>
             <TransectionRow style={{ marginBottom: 25 }}>

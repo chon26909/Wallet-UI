@@ -1,4 +1,4 @@
-export interface TransectionProps {
+export interface TransactionProps {
     id: number;
     title: string;
     subtitle: string;
@@ -10,11 +10,11 @@ export interface TransectionProps {
     };
 }
 
-export interface TransectionSectionProps {
-    data: Array<TransectionProps>;
+export interface TransactionSectionProps {
+    data: Array<TransactionProps>;
 }
 
-export interface TransectionAviProps {
+export interface TransactionAviProps {
     icon: string;
     background: string;
 }
