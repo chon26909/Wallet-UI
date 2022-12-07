@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import styled from "styled-components/native";
 import { ScreenWidth } from "../shared";
 
-import bg from "../../../assets/images/background.png";
+import bg from "../../../assets/images/bg-card.jpg";
 import { colors } from "../colors";
 import RegularText from "../Texts/RegularText";
 import { CardProps } from "./types";
@@ -10,24 +10,24 @@ import { View } from "react-native";
 import SmallText from "../Texts/SmallText";
 
 const CardBackground = styled.ImageBackground`
-    height: 75%;
-    width: ${ScreenWidth * 0.67}px;
+    height: 100%;
+    width: ${ScreenWidth * 0.8}px;
     object-fit: cover;
     background-color: ${colors.accent};
-    margin-right: 25px;
+    margin-right: 20px;
     border-radius: 25px;
     overflow: hidden;
 `;
 
 const CardTouchable = styled.TouchableHighlight`
     height: 100%;
-    border-radius: 25px;
+    border-radius: 20px;
 `;
 
 const TouchableView = styled.View`
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 15px;
     flex: 1;
 `;
 
@@ -39,9 +39,8 @@ const CardRow = styled.View`
 `;
 
 const Logo = styled.Image`
-    width: 250px;
-    height: 50px;
-    object-fit: cover;
+    width: 300px;
+    height: 40px;
     flex: 1;
 `;
 
@@ -61,7 +60,7 @@ const CardItem: FunctionComponent<CardProps> = (props) => {
                                 Total balance
                             </SmallText>
                             <RegularText textStyles={{ fontSize: 19, color: colors.graylight }}>
-                                {props.balance}
+                                {props.balance} ฿
                             </RegularText>
                         </View>
                         <Logo source={props.logo} />
