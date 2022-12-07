@@ -5,6 +5,7 @@ import RegularText from "../Texts/RegularText";
 import SmallText from "../Texts/SmallText";
 import { Ionicons } from "@expo/vector-icons";
 import { TransactionSectionProps } from "./types";
+import TransactionItem from "./TransactionItem";
 
 const TransectionSectionBackground = styled.View`
     width: 100%;
@@ -28,7 +29,7 @@ const TransectionSection: FunctionComponent<TransactionSectionProps> = (props) =
         <TransectionSectionBackground>
             <TransectionRow style={{ marginBottom: 25 }}>
                 <RegularText textStyles={{ fontSize: 20, color: colors.secondary }}>
-                    Transection
+                    Transaction
                 </RegularText>
                 <SmallText textStyles={{ color: colors.secondary }}>
                     Recent
@@ -42,7 +43,7 @@ const TransectionSection: FunctionComponent<TransactionSectionProps> = (props) =
                     paddingBottom: 25
                 }}
                 keyExtractor={({ id }: any) => id.toString()}
-                renderItem={}
+                renderItem={({ item }: any) => <TransactionItem {...item} />}
             />
         </TransectionSectionBackground>
     );

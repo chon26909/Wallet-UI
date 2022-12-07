@@ -1,3 +1,5 @@
+import { Ionicons } from "@expo/vector-icons";
+
 export interface TransactionProps {
     id: number;
     title: string;
